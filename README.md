@@ -1,3 +1,67 @@
+
+
+# FluoroSAM (Stabilized Fork)
+
+> Maintained fork of FluoroSAM with validated dependency versions, installation fixes, and inference compatibility improvements for modern Python environments.
+
+## Overview
+
+This fork was created to provide a reproducible and stable installation process for FluoroSAM. The original repository relies on dependency versions that may no longer install consistently using current package managers and OpenMMLab releases.
+
+The core FluoroSAM functionality and pretrained model architecture remain unchanged. This fork focuses on dependency stabilization, packaging fixes, and runtime compatibility improvements.
+
+## Validated Environment
+
+The repository has been tested successfully with the following configuration:
+
+- Python 3.11
+- NumPy 1.26.4
+- PyTorch 2.1.1 + CUDA 11.8
+- TorchVision 0.16.1
+- MMCV 2.1.0
+- MMEngine 0.10.7
+- MMDetection 3.3.0
+- Albumentations 2.0.4
+
+## Changes in This Fork
+
+### Installation & Dependency Fixes
+
+- Added validated dependency versions.
+- Resolved NumPy 2.x compatibility issues.
+- Stabilized OpenMMLab dependency installation.
+- Verified compatibility between PyTorch, MMCV, and MMDetection.
+- Added support for installation through a single `requirements.txt`.
+
+### Runtime Fixes
+
+- Fixed CLI segmentation workflow.
+- Corrected `predict_mask()` return value handling in `segment.py`.
+- Fixed GUI entry-point configuration.
+- Resolved CLIP FP16 CPU inference issues.
+- Verified image embedding generation and mask prediction workflow.
+
+## Installation
+
+```bash
+git clone https://github.com/QendresaVisokaMorina/fluorosam.git
+cd fluorosam
+
+python -m venv venv
+venv\Scripts\activate
+
+pip install -r requirements.txt
+pip install -e .
+```
+
+---
+
+
+## Original Project Documentation
+
+The following section is preserved from the original FluoroSAM repository.
+
+
 <h1 align="center">
 FluoroSAM
   <br>
