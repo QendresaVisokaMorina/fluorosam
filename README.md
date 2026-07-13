@@ -56,14 +56,13 @@ venv311\Scripts\activate
 pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
 ```
 
-### 3. Install OpenMMLab dependencies
+### 3. Install MMCV
+
 
 ```bash
-pip install openmim
-pip install mmengine==0.10.7
-mim install mmcv==2.1.0
-pip install mmdet==3.3.0
+pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.1/index.html
 ```
+
 
 ### 4. Install FluoroSAM dependencies
 
