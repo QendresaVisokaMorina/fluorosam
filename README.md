@@ -31,7 +31,6 @@ The repository has been tested successfully with the following configuration:
 - Resolved NumPy 2.x compatibility issues.
 - Stabilized OpenMMLab dependency installation.
 - Verified compatibility between PyTorch, MMCV, and MMDetection.
-- Added support for installation through a single `requirements.txt`.
 
 ### Runtime Fixes
 
