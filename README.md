@@ -43,17 +43,39 @@ The repository has been tested successfully with the following configuration:
 
 ## Installation
 
+### 1. Create Python 3.11 environment
+
 ```bash
-git clone https://github.com/QendresaVisokaMorina/fluorosam.git
-cd fluorosam
-
-python -m venv venv
-venv\Scripts\activate
-
-pip install -r requirements.txt
-pip install -e .
+py -3.11 -m venv venv311
+venv311\Scripts\activate
 ```
 
+### 2. Install PyTorch
+
+```bash
+pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
+```
+
+### 3. Install OpenMMLab dependencies
+
+```bash
+pip install openmim
+pip install mmengine==0.10.7
+mim install mmcv==2.1.0
+pip install mmdet==3.3.0
+```
+
+### 4. Install FluoroSAM dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Install FluoroSAM
+
+```bash
+pip install -e .
+```
 ---
 
 
