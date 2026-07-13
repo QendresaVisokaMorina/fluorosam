@@ -8,6 +8,8 @@ import cv2
 import seaborn as sns
 from typing import List, Optional
 
+import torch
+
 log = logging.getLogger(__name__)
 
 def as_uint8(image: np.ndarray) -> np.ndarray:
@@ -102,6 +104,9 @@ def combine_heatmap(
     """
     image_arr = ensure_cdim(as_float32(image), c=3)
     heatmap_arr = ensure_cdim(heatmap, c=1)
+
+    if isinstance(heatmap_arr, torch.Tensor):
+        heatmap_arr = heatmap_arr.detach().cpu().numpy()
 
     heatmap_arr = heatmap_arr.transpose(2, 0, 1)
     image_arr = image_arr.transpose(2, 0, 1)

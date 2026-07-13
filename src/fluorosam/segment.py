@@ -167,7 +167,7 @@ def main(
 
     for i, p in enumerate(prompt):
         log.info(f"\nPredicting mask for the prompt '{p}'")
-        mask, pred_iou = model.predict_mask(
+        mask, pred_iou, _ = model.predict_mask(
             image_embedding, p, original_size=image.shape[:2], return_iou=True
         )
 

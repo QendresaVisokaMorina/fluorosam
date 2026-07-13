@@ -296,5 +296,9 @@ process_button.pack(pady=10)
 result_label = tk.Label(root, text="")
 result_label.pack()
 
-root.mainloop()
+def main():
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
 

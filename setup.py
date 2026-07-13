@@ -16,7 +16,7 @@ setup(
     entry_points={
         "console_scripts": [
             "segment = fluorosam.segment:main",
-            "gui = fluorosam.segment_gui",
+            "gui = fluorosam.segment_gui:main",
         ]
     },
 )

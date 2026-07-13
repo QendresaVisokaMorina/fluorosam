@@ -73,6 +73,7 @@ class PromptEncoder(nn.Module):
         self.no_mask_embed = nn.Embedding(1, embed_dim)
 
         self.text_model, _ = clip.load("ViT-B/32")
+        self.text_model = self.text_model.float()
         self.text_model.visual.transformer = None
 
         # Change hidden dim to 512
@@ -174,6 +175,13 @@ class PromptEncoder(nn.Module):
 
         # [C, 512]
         with torch.no_grad():
+            
+            attn = self.text_model.transformer.resblocks[0].attn
+
+            print("in_proj_weight:", attn.in_proj_weight.dtype)
+            print("in_proj_bias:", attn.in_proj_bias.dtype)
+            print("out_proj.weight:", attn.out_proj.weight.dtype)
+
             text_embeddings: torch.Tensor = self.text_model.encode_text(text_inputs)
 
             # log.info(
